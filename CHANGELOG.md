@@ -6,6 +6,7 @@
 - [ ] Better journal/venue abbreviations
 - [ ] Better `shorttitles` in metadata
 - [ ] Custom email address to use with doi.crossref.org
+- [ ] Add a text field for custom regex pattern(s)
 - [ ] Test unreleased changes on firefox & edge, and also check permissions differences amongst different browsers
 
 ## Unreleased
@@ -19,6 +20,7 @@
 - [#18](https://github.com/gchenfc/sci-hub-now/pull/18) Context menu support (right click on a DOI link)
 
 ### Modified
+- [#27](https://github.com/gchenfc/sci-hub-now/pull/27) DOI regex update - only accept DOI's in the form of `a href="..."`
 - [#24](https://github.com/gchenfc/sci-hub-now/pull/24) Icon changed for readibility in dark mode
 
 ## v0.1.0

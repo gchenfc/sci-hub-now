@@ -3,6 +3,9 @@
 const doiRegex = new RegExp(
   /\b(10[.][0-9]{4,}(?:[.][0-9]+)*\/(?:(?!["&\'<>])\S)+)\b/
 );
+const doiRegexHref = new RegExp(
+  /\ba\b[^<]*href\s*=\s*"[^"]*?\b(10[.][0-9]{4,}(?:[.][0-9]+)*\/(?:(?!["&\'<>])\S)+)\b[^"]*?"/
+);
 const trueRed = "#BC243C";
 
 // Variable management constants
@@ -167,9 +170,9 @@ function redirectToScihub(destUrl) {
 // Primary callback upon icon click
 function getHtml(htmlSource) {
   htmlSource = htmlSource[0];
-  foundRegex = htmlSource.match(doiRegex);
+  foundRegex = htmlSource.match(doiRegexHref);
   if (foundRegex) {
-    var doi = foundRegex[0].split(";")[0];
+    var doi = foundRegex[1].split(";")[0];
     var destUrl = sciHubUrl + doi;
     // console.log("Regex: " + foundRegex);
     if (autodownload) {
